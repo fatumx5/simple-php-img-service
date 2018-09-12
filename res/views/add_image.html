@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            form {
+                width: 5em;
+                margin-top: 10px;
+            }
+            input{
+                margin: 5px;
+            }
+
+          .notif {
+            color: green;
+          }
+
+          .err {
+            color: red;
+          }
+        </style>
+    </head>
+    <body>
+	{{ include('nav.html') }}
+        {% for error in errors %}
+  <p class="err">{{ error }}</p>
+  {% endfor %} {% for notification in notifications %}
+  <p class="notif">{{ notification }}</p>
+  {% endfor %}
+        <div><form method="post" action="/add-image/" enctype="multipart/form-data">
+                <label>Add image</label>
+                <input type="file" name="image">
+                <input type="submit" >
+                    
+            </form></div>
+    </body>
+</html>

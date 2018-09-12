@@ -1,0 +1,16 @@
+{
+    "name": "test/test_task",
+    "description": "simple app for upload and watch the images",
+    "type": "project",
+    "require": {
+        "twig/twig": "~2.5.0",
+        "imagine/imagine": "1.0.0-alpha1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fedor Tumanov",
+            "email": "fatumx5@mail.ru"
+        }
+    ]
+}

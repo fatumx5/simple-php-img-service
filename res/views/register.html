@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <title>TODO supply a title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    form {
+      width: 4em;
+      margin-top: 10px;
+    }
+    
+    input{
+        margin: 5px;
+    }
+
+    .notif {
+      color: green;
+    }
+
+    .err {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  {{ include('nav.html') }}
+  <p>Login must contains latin alfabet symbols or digits only. Login's length must be less than 30 and more than 3 symbols</p>
+  <p>Password 's length must be less than 100 and more than 5 symbols</p>
+
+  {% for error in errors %}
+  <p class="err">{{ error }}</p>
+  {% endfor %} {% for notification in notifications %}
+  <p class="notif">{{ notification }}</p>
+  {% endfor %}
+  <div>
+    <form action="/auth/sign-up" method="post">
+      <label>Login</label>
+      <input type="text" name="login">
+      <label>Password</label>
+      <input type="password" name="password">
+      <label>Submit password</label>
+      <input type="password" name="password-submit">
+      <input type="submit" value="submit">
+    </form>
+  </div>
+</body>
+
+</html>
